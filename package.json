@@ -1,23 +1,32 @@
 {
   "name": "dnd-roll",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "A simple CLI tool for rolling dice in D&D",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheDokT0r/dnd-roll"
+  },
+  "homepage": "https://github.com/TheDokT0r/dnd-roll",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild src/index.ts --bundle --platform=node --target=node16 --outdir=dist",
     "start": "ts-node src/index.ts",
-    "prod": "node dist/index.js"
+    "prod": "node dist/index.js",
+    "deploy": "rimraf dist && npm run build && npm publish --access public"
   },
   "bin": "./dist/index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "dnd", "dice", "roll", "cli", "rng"
+  ],
+  "author": "boot_scrap_van",
+  "license": "GPL-2.0",
   "devDependencies": {
     "@types/node": "^20.8.4",
     "chalk": "^4.1.2",
     "esbuild": "^0.19.4",
     "quick-random": "^0.2.7",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
